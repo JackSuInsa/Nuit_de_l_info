@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédits</title>
+    <style>
+
+		nav {
+			background-color:#1a134e;
+			overflow: hidden;
+		}
+
+		/* Style des liens de la barre de navigation */
+		nav a {
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 20px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+
+		/* Changement de couleur lors du survol */
+		nav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+		/* Style pour le "home" (lien actif, si nécessaire) */
+		nav a.active {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+        /* Style général rétro-gaming */
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background:  linear-gradient(
+                rgba(0, 0, 0, 0.2), 
+                rgba(0, 0, 0, 0.2)
+            ),
+                url('images/png/fish_cropped.png');
+            background-size: 150px 130px;
+            animation: backgroundScroll 20s linear infinite;
+            color: #00ccff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        @keyframes backgroundScroll {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100px 100px;
+            }
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #1a3d74, 0 0 15px #0088cc;
+        }
+
+        .contributors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 90%;
+        }
+
+        .contributor-card {
+            background: linear-gradient(135deg, #004466, #002233);
+            border: 2px solid #00ccff;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 0 10px #00ccff;
+        }
+
+        .contributor-card:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #002233, #004466);
+        }
+
+        .avatar {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            border: 2px solid #00ccff;
+        }
+
+        .github-link {
+            text-decoration: none;
+            color: #00ccff;
+            font-size: 0.8rem;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Graphique de participation */
+        .participation-graph {
+            margin-top: 30px;
+            width: 80%;
+            background: #001f33;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #00ccff;
+            box-shadow: 0 0 10px #00ccff;
+        }
+
+        .participation-graph canvas {
+            width: 100%;
+            height: 200px;
+        }
+		
+
+		:root {
+			font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
+		}
+		button, input {
+			font: 1em Hind, sans-serif;
+			line-height: 1.5em;
+		}
+		input {
+			color: #171717;
+		}
+		.search-bar {
+			display: flex;
+		}
+		
+		.search-bar input,
+		.search-btn, 
+		.search-btn:before, 
+		.search-btn:after {
+			transition: all 0.25s ease-out;
+		}
+		.search-bar input,
+		.search-btn {
+			width: 3em;
+			height: 3em;
+		}
+		.search-bar input:invalid:not(:focus),
+		.search-btn {
+			cursor: pointer;
+		}
+		.search-bar,
+		.search-bar input:focus,
+		.search-bar input:valid  {
+			width: 100%;
+		}
+		.search-bar input:focus,
+		.search-bar input:not(:focus) + .search-btn:focus {
+			outline: transparent;
+		}
+		.search-bar {
+			margin: auto;
+			padding: 1.5em;
+			justify-content: center;
+			max-width: 30em;
+		}
+		.search-bar input {
+			background: transparent;
+			border-radius: 1.5em;
+			box-shadow: 0 0 0 0.4em #171717 inset;
+			padding: 0.75em;
+			transform: translate(0.5em,0.5em) scale(0.5);
+			transform-origin: 100% 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+		.search-bar input::-webkit-search-decoration {
+			-webkit-appearance: none;
+		}
+		.search-bar input:focus,
+		.search-bar input:valid {
+			background: #fff;
+			border-radius: 0.375em 0 0 0.375em;
+			box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+			transform: scale(1);
+		}
+		.search-btn {
+			background: #171717;
+			border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+			padding: 0.75em;
+			position: relative;
+			transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+			transform-origin: 0 50%;
+		}
+		.search-btn:before, 
+		.search-btn:after {
+			content: "";
+			display: block;
+			opacity: 0;
+			position: absolute;
+		}
+		.search-btn:before {
+			border-radius: 50%;
+			box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+			top: 0.75em;
+			left: 0.75em;
+			width: 1.2em;
+			height: 1.2em;
+		}
+		.search-btn:after {
+			background: #f1f1f1;
+			border-radius: 0 0.25em 0.25em 0;
+			top: 51%;
+			left: 51%;
+			width: 0.75em;
+			height: 0.25em;
+			transform: translate(0.2em,0) rotate(45deg);
+			transform-origin: 0 50%;
+		}
+		.search-btn span {
+			display: inline-block;
+			overflow: hidden;
+			width: 1px;
+			height: 1px;
+		}
+
+		/* Active state */
+		.search-bar input:focus + .search-btn,
+		.search-bar input:valid + .search-btn {
+			background: #008cff;
+			border-radius: 0 0.375em 0.375em 0;
+			transform: scale(1);
+		}
+		.search-bar input:focus + .search-btn:before, 
+		.search-bar input:focus + .search-btn:after,
+		.search-bar input:valid + .search-btn:before, 
+		.search-bar input:valid + .search-btn:after {
+			opacity: 1;
+		}
+		.search-bar input:focus + .search-btn:hover,
+		.search-bar input:valid + .search-btn:hover,
+		.search-bar input:valid:not(:focus) + .search-btn:focus {
+			background: #0c48db;
+		}
+		.search-bar input:focus + .search-btn:active,
+		.search-bar input:valid + .search-btn:active {
+			transform: translateY(1px);
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			input {
+				color: #f1f1f1;
+			}
+
+			.search-bar input {
+				box-shadow: 0 0 0 0.4em #f1f1f1 inset;
+			}
+			.search-bar input:focus,
+			.search-bar input:valid {
+				background: #3d3d3d;
+				box-shadow: 0 0 0 0.1em #3d3d3d inset;
+			}
+			.search-btn {
+				background: #f1f1f1;
+			}
+		}
+
+		.popup {
+			display: none;  /* Caché par défaut */
+			position: fixed;
+			top: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 20px;
+			background-color: #ff0000;
+			color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			font-size: 18px;
+			z-index: 1000;  /* Assurez-vous qu'il est au-dessus des autres éléments */
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		.popup.show {
+			display: block;
+			opacity: 1;
+		}
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+	<%- include('partials/header') %>
+
+    <h1 class="title">Crédits</h1>
+
+    <div class="contributors-container">
+        <!-- Exemple de contributeurs -->
+        <div class="contributor-card">
+            <img src="https://secure.gravatar.com/avatar/3e8a3bfc5c2d0674b49c35783dbd27b51afb66a951c45d64a0ec32ebd3e43319?s=384&d=identicon" alt="Avatar de jean" class="avatar">
+            <p>Jean Rouxel</p>
+            <a href="https://gitlab.insa-rouen.fr/jrouxel" class="github-link" target="_blank">@jrouxel</a>
+        </div>
+        <div class="contributor-card">
+            <img src="https://secure.gravatar.com/avatar/2bb910da12d86c56053b5fe96036e0176cdad0968b6a983cb5fe36d73b09034c?s=384&d=identicon" alt="Avatar de munh" class="avatar">
+            <p>Munh Baator Bat</p>
+            <a href="https://gitlab.insa-rouen.fr/mbat" class="github-link" target="_blank">@mbat</a>
+        </div>
+        <div class="contributor-card">
+            <img src="https://secure.gravatar.com/avatar/2b80c2428a4ae2620b08d95f13e430ba5a8494d7fed72661ce8bf26f3d976dac?s=384&d=identicon" alt="Avatar de thomas" class="avatar">
+            <p>Thomas Bauer</p>
+            <a href="https://gitlab.insa-rouen.fr/tbauer" class="github-link" target="_blank">@tbauer</a>
+        </div>
+        <div class="contributor-card">
+            <img src="https://gitlab.insa-rouen.fr/uploads/-/system/user/avatar/2414/avatar.png?width=192" alt="Avatar de ali" class="avatar">
+            <p>Ali Hamdani</p>
+            <a href="https://gitlab.insa-rouen.fr/ahamdani" class="github-link" target="_blank">@ahamdani</a>
+        </div>
+        <div class="contributor-card">
+            <img src="https://secure.gravatar.com/avatar/91f5aa5b5a9549dbbcd21a54c9a501bfb136744b06b415390bf6dfac2e7a124e?s=384&d=identicon" alt="Avatar de jack" class="avatar">
+            <p>Jack Su</p>
+            <a href="https://gitlab.insa-rouen.fr/jasu" class="github-link" target="_blank">@jasu</a>
+        </div>
+    </div>
+
+    <!-- Graphique de participation -->
+    <div class="participation-graph">
+        <canvas id="contributionChart"></canvas>
+    </div>
+
+    <!-- Script pour graphique -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('contributionChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jean', 'Munh', 'Thomas', 'Ali', 'Jack'],
+                datasets: [{
+                    label: 'Contributions',
+                    data: [12, 19, 5, 7, 13],
+                    backgroundColor: 'rgba(0, 204, 255, 0.7)',
+                    borderColor: '#00ccff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#002244'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: '#002244'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+	
+	<p>Donnez-nous votre avis !</p>
+	<div id="search-container">
+        <form action="javascript:" class="search-bar">
+		<input type="search" name="search" id="search-bar" pattern=".*\S.*" required>
+		<button class="search-btn" type="submit">
+			<span></span>
+		</button>
+		</form>
+    </div>
+    <div id="popup" class="popup">
+        <p id="notification">Notification de frustration</p>
+    </div>
+	
+	<script>
+		const searchBar = document.getElementById('search-bar');
+		const notification = document.getElementById('notification');
+		const popup = document.getElementById('popup');
+
+		let frustrationLevel = 1; // Niveau de frustration (augmente au fil des clics)
+
+		// Déplacer la barre de recherche à chaque survol
+		searchBar.addEventListener('mouseover', () => {
+			if (Math.random() < 0.95) { // 95% de chances qu'elle bouge
+				moveSearchBar();
+				showPopup("Toujours pas ! Essaie encore ! 😜");
+			}
+		});
+
+		// Déplacer la barre immédiatement après le clic
+		searchBar.addEventListener('click', () => {
+			frustrationLevel++;
+			showPopup(`Haha, tu n'y arriveras jamais ! Niveau frustration : ${frustrationLevel}`);
+			moveSearchBar();
+
+			// Rendre les mouvements plus rapides et imprévisibles
+			setTimeout(() => moveSearchBar(), Math.random() * 300 / frustrationLevel);
+		});
+
+		// Afficher le popup avec un message de notification
+		function showPopup(message) {
+			notification.textContent = message;
+			popup.classList.add('show');
+
+			// Masquer le popup après 3 secondes
+			setTimeout(() => {
+				popup.classList.remove('show');
+			}, 3000); // 3000 ms = 3 secondes
+		}
+
+		// Déplacement aléatoire dans les limites de l'écran
+		function moveSearchBar() {
+			const container = document.getElementById('search-container');
+			const maxX = window.innerWidth - container.offsetWidth - 20; // Garde un espace de 20px des bords
+			const maxY = window.innerHeight - container.offsetHeight - 20;
+
+			const randomX = Math.random() * maxX;
+			const randomY = Math.random() * maxY;
+
+			container.style.position = "absolute";
+			container.style.left = `${randomX}px`;
+			container.style.top = `${randomY}px`;
+		}
+	</script>
+</body>
+</html>
